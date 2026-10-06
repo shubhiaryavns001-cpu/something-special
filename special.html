@@ -1,0 +1,1058 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width,
+               initial-scale=1.0,
+               maximum-scale=1.0,
+               user-scalable=no">
+
+<title>For My Bestie 💌</title>
+
+<style>
+
+/* =========================
+   BASIC SETUP
+========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    min-height: 100%;
+}
+
+body {
+
+    margin: 0;
+
+    min-height: 100vh;
+    min-height: 100dvh;
+
+    font-family:
+        "Trebuchet MS",
+        Arial,
+        sans-serif;
+
+    background:
+        radial-gradient(
+            circle at top,
+            #fff4f8,
+            transparent 45%
+        ),
+
+        linear-gradient(
+            135deg,
+            #ffd8e8,
+            #dce9ff
+        );
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 16px;
+
+    overflow-x: hidden;
+
+    color: #444;
+}
+
+
+/* =========================
+   MAIN CARD
+========================= */
+
+.card {
+
+    width: 100%;
+
+    max-width: 560px;
+
+    min-height: 560px;
+
+    max-height: 92vh;
+    max-height: 92dvh;
+
+    background:
+        rgba(255,255,255,0.96);
+
+    border-radius: 28px;
+
+    padding:
+        30px
+        22px;
+
+    box-shadow:
+        0 18px 50px
+        rgba(0,0,0,0.15);
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    -webkit-overflow-scrolling: touch;
+
+    position: relative;
+}
+
+
+/* =========================
+   SCREENS
+========================= */
+
+.screen {
+
+    display: none;
+
+    animation:
+        screenIn
+        0.5s
+        ease;
+
+}
+
+.screen.active {
+
+    display: block;
+
+}
+
+@keyframes screenIn {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(18px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+/* =========================
+   TEXT
+========================= */
+
+h1 {
+
+    color: #ff4f81;
+
+    font-size: clamp(
+        27px,
+        7vw,
+        36px
+    );
+
+    line-height: 1.2;
+
+    margin:
+        12px 0
+        18px;
+
+}
+
+h2 {
+
+    color: #444;
+
+    font-size:
+        clamp(
+            22px,
+            6vw,
+            28px
+        );
+
+}
+
+p {
+
+    font-size:
+        clamp(
+            16px,
+            4.4vw,
+            18px
+        );
+
+    line-height: 1.65;
+
+    margin:
+        14px 0;
+
+}
+
+.small {
+
+    font-size: 14px;
+
+    color: #888;
+
+}
+
+
+/* =========================
+   ENVELOPE
+========================= */
+
+.envelope-area {
+
+    padding-top: 20px;
+
+}
+
+.envelope {
+
+    width: min(
+        210px,
+        60vw
+    );
+
+    height:
+        min(
+            140px,
+            40vw
+        );
+
+    background:
+        #ff7096;
+
+    margin:
+        35px auto;
+
+    border-radius: 12px;
+
+    position: relative;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 12px 28px
+        rgba(255,80,130,0.3);
+
+    transition:
+        transform
+        0.25s
+        ease;
+
+}
+
+.envelope:active {
+
+    transform:
+        scale(0.94);
+
+}
+
+.envelope:before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 0;
+    height: 0;
+
+    border-left:
+        min(105px, 30vw)
+        solid transparent;
+
+    border-right:
+        min(105px, 30vw)
+        solid transparent;
+
+    border-top:
+        min(75px, 22vw)
+        solid #ff9db8;
+
+}
+
+.envelope:after {
+
+    content: "💌";
+
+    position: absolute;
+
+    font-size:
+        clamp(
+            35px,
+            11vw,
+            48px
+        );
+
+    top: 55%;
+    left: 50%;
+
+    transform:
+        translate(-50%, -30%);
+
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+button {
+
+    border: none;
+
+    min-height: 50px;
+
+    padding:
+        13px
+        23px;
+
+    border-radius: 30px;
+
+    font-family: inherit;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    margin: 8px 5px;
+
+    -webkit-tap-highlight-color:
+        transparent;
+
+    touch-action: manipulation;
+
+}
+
+.primary {
+
+    background:
+        #ff5c8a;
+
+    color: white;
+
+    box-shadow:
+        0 7px 16px
+        rgba(255,80,130,0.25);
+
+}
+
+.primary:active {
+
+    transform:
+        scale(0.95);
+
+}
+
+.secondary {
+
+    background:
+        #eeeeee;
+
+    color: #444;
+
+}
+
+
+/* =========================
+   APOLOGY LETTER
+========================= */
+
+.letter {
+
+    background:
+        #fff8fb;
+
+    border:
+        2px dashed
+        #ffabc2;
+
+    border-radius:
+        20px;
+
+    padding:
+        18px;
+
+    text-align:
+        left;
+
+}
+
+
+/* =========================
+   FINAL SCREEN
+========================= */
+
+.bigEmoji {
+
+    font-size:
+        clamp(
+            60px,
+            18vw,
+            85px
+        );
+
+    animation:
+        bounce
+        1.2s
+        infinite;
+
+}
+
+@keyframes bounce {
+
+    50% {
+
+        transform:
+            translateY(-10px);
+
+    }
+
+}
+
+
+/* =========================
+   FALLING EMOJIS
+========================= */
+
+.heart {
+
+    position: fixed;
+
+    pointer-events: none;
+
+    z-index: 999;
+
+    animation:
+        fall
+        linear
+        forwards;
+
+}
+
+@keyframes fall {
+
+    0% {
+
+        transform:
+            translateY(-60px)
+            rotate(0deg);
+
+        opacity: 1;
+
+    }
+
+    100% {
+
+        transform:
+            translateY(110vh)
+            rotate(360deg);
+
+        opacity: 0;
+
+    }
+
+}
+
+
+/* =========================
+   SMALL PHONES
+========================= */
+
+@media
+(max-width: 380px) {
+
+    body {
+
+        padding: 10px;
+
+    }
+
+    .card {
+
+        padding:
+            24px
+            17px;
+
+        border-radius:
+            24px;
+
+    }
+
+    p {
+
+        font-size:
+            15px;
+
+        line-height:
+            1.55;
+
+    }
+
+    button {
+
+        width:
+            90%;
+
+        max-width:
+            260px;
+
+    }
+
+}
+
+
+/* =========================
+   LANDSCAPE PHONE
+========================= */
+
+@media
+(max-height: 550px)
+and
+(orientation: landscape) {
+
+    body {
+
+        align-items:
+            flex-start;
+
+    }
+
+    .card {
+
+        margin:
+            10px 0;
+
+        max-height:
+            94vh;
+
+        max-height:
+            94dvh;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="card">
+
+
+<!-- =================================================
+     SCREEN 1 — GIFT
+================================================= -->
+
+<div
+    class="screen active"
+    id="screen1">
+
+    <div
+        class="envelope-area">
+
+        <div
+            style="
+            font-size:60px;
+            ">
+            🥺
+        </div>
+
+        <h1>
+            You Have A Message 💌
+        </h1>
+
+        <p>
+            From someone who has made
+            a <b>very questionable decision.</b>
+        </p>
+
+        <div
+            class="envelope"
+            onclick="openLetter()">
+        </div>
+
+        <p class="small">
+            Tap the envelope to open your gift.
+        </p>
+
+    </div>
+
+</div>
+
+
+
+<!-- =================================================
+     SCREEN 2 — OH NO
+================================================= -->
+
+<div
+    class="screen"
+    id="screen2">
+
+    <div
+        style="
+        font-size:65px;
+        ">
+        👀
+    </div>
+
+    <h1>
+        Okay...
+    </h1>
+
+    <p>
+        Before you continue...
+    </p>
+
+    <p>
+        Yes, I know you're angry.
+        😭
+    </p>
+
+    <p>
+        And yes...
+        <br>
+        <b>
+            I know exactly why.
+        </b>
+    </p>
+
+    <p>
+        I somehow managed to put a birthday
+        story for someone else...
+        <br>
+        but forgot yours.
+    </p>
+
+    <p>
+        And then you had to remind me.
+        💀
+    </p>
+
+    <button
+        class="primary"
+        onclick="nextScreen(3)">
+
+        Okay...
+        there's more 😭
+
+    </button>
+
+</div>
+
+
+
+<!-- =================================================
+     SCREEN 3 — LONG APOLOGY
+================================================= -->
+
+<div
+    class="screen"
+    id="screen3">
+
+    <div
+        style="
+        font-size:55px;
+        ">
+        📝
+    </div>
+
+    <h1>
+        My Official Apology
+    </h1>
+
+    <div class="letter">
+
+        <p>
+            You shouldn't have had to remind me to put
+            up a story for your birthday, especially when
+            I somehow managed to put one up for someone
+            else. 😭
+        </p>
+
+        <p>
+            That was genuinely such a stupid move from me,
+            and I completely understand why it made you angry😭
+            You're literally my best friend, so the fact
+            that you had to remind me makes me feel even
+            stupid
+        </p>
+
+        <p>
+            There is absolutely no excuse I can give you
+            that will make "I forgot" sound less stupid,
+            so I'm not even going to try. 🙃
+        </p>
+
+        <p>
+            I know a birthday story might seem like a small
+            thing to someone else, but I know it wasn't
+            really about the story.
+        </p>
+
+        <p>
+            It was about wanting to feel remembered by
+            your own best friend.
+        </p>
+
+        <p>
+            And you deserved to be remembered without
+            having to ask.
+            ❤️
+        </p>
+
+        <p>
+            I'm genuinely sorry.
+        </p>
+
+        <p>
+            Also, for the record, I am fully prepared to
+            be bullied about this for the foreseeable
+            future because, honestly...
+            <b>I deserve it. 😭</b>
+        </p>
+
+        <p>
+            You can stay angry for a little longer if you
+            absolutely must, but just know that I love you,
+            I value you way more than one stupid forgotten
+            story could ever show, and I really don't want
+            my best friend being mad at me.
+        </p>
+
+    </div>
+
+    <button
+        class="primary"
+        onclick="nextScreen(4)">
+
+        One last thing... 🥺
+
+    </button>
+
+</div>
+
+
+
+<!-- =================================================
+     SCREEN 4 — FORGIVE
+================================================= -->
+
+<div
+    class="screen"
+    id="screen4">
+
+    <div
+        style="
+        font-size:70px;
+        ">
+        🫴
+    </div>
+
+    <h1>
+        So...
+    </h1>
+
+    <p>
+        After everything I've just said...
+    </p>
+
+    <h2>
+        Will you forgive me?
+    </h2>
+
+    <p>
+        Choose wisely. 😌
+    </p>
+
+    <div
+        style="
+        margin-top:25px;
+        ">
+
+        <button
+            class="primary"
+            onclick="forgive()">
+
+            Okay, fine 😭❤️
+
+        </button>
+
+        <button
+            class="secondary"
+            id="noButton"
+            onclick="runAway()">
+
+            Nope 😤
+
+        </button>
+
+    </div>
+
+</div>
+
+
+
+<!-- =================================================
+     SCREEN 5 — FORGIVEN
+================================================= -->
+
+<div
+    class="screen"
+    id="screen5">
+
+    <div class="bigEmoji">
+        🎉
+    </div>
+
+    <h1>
+        SHE FORGAVE ME. 😭❤️
+    </h1>
+
+    <p>
+        I genuinely thought I was finished.
+        😂
+    </p>
+
+    <p>
+        Okay, now come here, drama queen.
+        <br>
+        <b>
+            We're done fighting. 🤝
+        </b>
+    </p>
+
+    <p>
+        And yes...
+    </p>
+
+    <p>
+        <b>
+            Best friend's birthday =
+            NEVER forget.
+            🫡
+        </b>
+    </p>
+
+    <p>
+        Lesson permanently installed.
+        Hopefully.
+        😭
+    </p>
+
+    <div
+        style="
+        font-size:45px;
+        ">
+        🫶 ❤️ 🫶
+    </div>
+
+    <p class="small">
+        You're stuck with me, unfortunately.
+    </p>
+
+    <p class="small">
+        — Your idiot best friend 🫡
+    </p>
+
+</div>
+
+
+</div>
+
+
+<script>
+
+
+/* =========================================
+   CHANGE SCREEN
+========================================= */
+
+function nextScreen(number) {
+
+    document
+        .querySelectorAll(".screen")
+        .forEach(function(screen) {
+
+            screen.classList.remove("active");
+
+        });
+
+    document
+        .getElementById("screen" + number)
+        .classList.add("active");
+
+    document
+        .querySelector(".card")
+        .scrollTop = 0;
+
+}
+
+
+/* =========================================
+   OPEN ENVELOPE
+========================================= */
+
+function openLetter() {
+
+    nextScreen(2);
+
+}
+
+
+/* =========================================
+   MOVING "NO" BUTTON
+========================================= */
+
+function runAway() {
+
+    const button =
+        document.getElementById("noButton");
+
+    const margin = 15;
+
+    const maxX =
+        window.innerWidth -
+        button.offsetWidth -
+        margin;
+
+    const maxY =
+        window.innerHeight -
+        button.offsetHeight -
+        margin;
+
+    const x =
+        Math.max(
+            margin,
+            Math.random() * maxX
+        );
+
+    const y =
+        Math.max(
+            margin,
+            Math.random() * maxY
+        );
+
+    button.style.position = "fixed";
+
+    button.style.left =
+        x + "px";
+
+    button.style.top =
+        y + "px";
+
+}
+
+
+/* =========================================
+   FORGIVEN
+========================================= */
+
+function forgive() {
+
+    const button =
+        document.getElementById("noButton");
+
+    button.style.position = "static";
+
+    nextScreen(5);
+
+    createHearts();
+
+}
+
+
+/* =========================================
+   HEART / CONFETTI EFFECT
+========================================= */
+
+function createHearts() {
+
+    const emojis = [
+
+        "❤️",
+        "💗",
+        "💕",
+        "💖",
+        "✨",
+        "🥳",
+        "🫶"
+
+    ];
+
+    for (
+        let i = 0;
+        i < 70;
+        i++
+    ) {
+
+        const heart =
+            document.createElement("div");
+
+        heart.className =
+            "heart";
+
+        heart.innerHTML =
+            emojis[
+                Math.floor(
+                    Math.random() *
+                    emojis.length
+                )
+            ];
+
+        heart.style.left =
+            Math.random() *
+            100 +
+            "vw";
+
+        heart.style.animationDuration =
+            2 +
+            Math.random() * 4 +
+            "s";
+
+        heart.style.fontSize =
+            15 +
+            Math.random() * 30 +
+            "px";
+
+        document.body.appendChild(
+            heart
+        );
+
+        setTimeout(
+            function() {
+
+                heart.remove();
+
+            },
+            6000
+        );
+
+    }
+
+}
+
+</script>
+
+</body>
+
+</html>
